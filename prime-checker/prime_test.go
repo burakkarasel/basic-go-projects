@@ -14,6 +14,11 @@ var tests = []struct {
 	{9, false, false},
 	{47, true, false},
 	{49, false, false},
+	{149, true, false},
+	{331, true, false},
+	{816, false, false},
+	{831, false, false},
+	{827, true, false},
 }
 
 // test folder is for some of my cases
