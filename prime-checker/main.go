@@ -11,7 +11,7 @@ func main() {
 
 func primeCheck(num int) (bool, error) {
 	if num < 2 {
-		return false, errors.New("Numbers that lesser than 2 cannot be a prime number")
+		return false, errors.New("numbers that lesser than 2 cannot be a prime number")
 	} else if num == 2 {
 		return true, nil
 	} else {
