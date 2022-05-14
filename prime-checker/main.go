@@ -1,23 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	fmt.Println(primeCheck(49))
 }
 
-func primeCheck(num int) bool {
+func primeCheck(num int) (bool, error) {
 	if num < 2 {
-		return false
+		return false, errors.New("Numbers that lesser than 2 cannot be a prime number")
 	} else if num == 2 {
-		return true
+		return true, nil
 	} else {
 		for i := 2; i < num; i++ {
 			if num%i == 0 {
-				return false
+				return false, nil
 			}
 		}
-		return true
+		return true, nil
 	}
 
 }
