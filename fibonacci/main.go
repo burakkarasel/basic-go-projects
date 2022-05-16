@@ -10,6 +10,10 @@ func main() {
 
 func fibo(num int) []int {
 
+	if num < 2 {
+		return []int{1}
+	}
+
 	num1 := 0
 	num2 := 1
 
