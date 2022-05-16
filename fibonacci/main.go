@@ -1,17 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
-	firstTen := fibo(10)
+	firstTen, err := fibo(10)
 
-	fmt.Println(firstTen)
+	fmt.Println(firstTen, err)
 }
 
-func fibo(num int) []int {
+func fibo(num int) ([]int, error) {
 
 	if num < 2 {
-		return []int{1}
+		return []int{1}, errors.New("Invalid input")
 	}
 
 	num1 := 0
@@ -29,5 +32,5 @@ func fibo(num int) []int {
 
 		result = append(result, num2)
 	}
-	return result
+	return result, nil
 }
