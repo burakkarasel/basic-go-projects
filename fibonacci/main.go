@@ -14,7 +14,7 @@ func main() {
 func fibo(num int) ([]int, error) {
 
 	if num < 2 {
-		return []int{1}, errors.New("Invalid input")
+		return []int{1}, errors.New("invalid input")
 	}
 
 	num1 := 0
