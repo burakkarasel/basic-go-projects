@@ -6,26 +6,22 @@ import (
 )
 
 func main() {
-	fmt.Println(fizzBuzz(3))
+	fmt.Println(fizzBuzz(7))
 }
 
-func fizzBuzz(num int) error {
+func fizzBuzz(num int) (string, error) {
 	if num <= 0 {
-		return errors.New("invalid input")
+		return "invalid", errors.New("invalid input")
 	} else {
 		switch {
 		case num%15 == 0:
-			fmt.Println("fizzbuzz")
-			return nil
+			return "fizzbuzz", nil
 		case num%3 == 0:
-			fmt.Println("fizz")
-			return nil
+			return "fizz", nil
 		case num%5 == 0:
-			fmt.Println("buzz")
-			return nil
+			return "buzz", nil
 		default:
-			fmt.Println(num)
-			return nil
+			return fmt.Sprintf("%v", num), nil
 		}
 	}
 }
